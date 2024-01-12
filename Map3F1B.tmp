@@ -27,7 +27,4 @@ shape = SubResource("CapsuleShape2D_jv4oo")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 20, 18, 13, 50, 34, 79, 22, 131, 36, 139, 56, 123, 104, 154, 115, 134, 145, 141, 189, 122, 234, 152, 268, 161, 289, 100, 315, 73, 284, 31, 319, 0, 320, 179, 0, 180)
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 1, 23, 10, 33, 0, 75, 15, 132, 1, 189, 18, 232, 1, 257, 13, 319, 0)
+polygon = PackedVector2Array(0, 0, 14, 25, 3, 53, 15, 75, 17, 123, 29, 149, 69, 154, 112, 156, 160, 157, 195, 155, 232, 156, 241, 119, 227, 102, 244, 81, 254, 50, 244, 38, 235, 9, 242, 3, 312, 2, 314, 34, 307, 96, 298, 135, 312, 162, 287, 175, 238, 177, 8, 178)
