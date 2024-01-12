@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="3_7b8ny"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jv4oo"]
-radius = 9.0
-height = 26.0
+radius = 4.0
+height = 20.0
 
 [node name="Map1" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(134, 77)
+position = Vector2(135, 81)
 script = ExtResource("2_dobce")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-0.999999, -2.38419e-06)
-scale = Vector2(0.746667, 0.773333)
+position = Vector2(-1, 13)
+scale = Vector2(0.453333, 0.4)
 texture = ExtResource("3_7b8ny")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
