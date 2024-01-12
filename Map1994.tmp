@@ -12,7 +12,7 @@ scale = Vector2(0.033281, 0.0374224)
 texture = ExtResource("2_8umvb")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(141, 84)
+position = Vector2(362, 149)
 script = ExtResource("2_dobce")
 metadata/_edit_group_ = true
 
