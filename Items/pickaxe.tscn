@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvnh5k2h12g6t"]
+
+[ext_resource type="Texture2D" uid="uid://c4ef2maeluydb" path="res://Textures/pick.png" id="1_osj63"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uaaso"]
+radius = 2.77925
+height = 28.2409
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xe2dt"]
+radius = 4.01357
+height = 47.41
+
+[node name="Pickaxe" type="StaticBody2D"]
+y_sort_enabled = true
+rotation = 0.598648
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -3)
+scale = Vector2(0.071499, 0.0794872)
+texture = ExtResource("1_osj63")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(12.1289, -7.06327)
+rotation = -0.359538
+shape = SubResource("CapsuleShape2D_uaaso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(9.84786e-08, -6.71775e-08)
+rotation = 0.958186
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_xe2dt")

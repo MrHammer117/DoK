@@ -1,33 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc810276m7i0l"]
+[gd_scene load_steps=3 format=3 uid="uid://cc810276m7i0l"]
 
-[ext_resource type="Script" path="res://Player/playerRun.gd" id="2_dobce"]
-[ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="3_7b8ny"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jv4oo"]
-radius = 4.0
-height = 20.0
+[ext_resource type="PackedScene" uid="uid://cvnh5k2h12g6t" path="res://Items/pickaxe.tscn" id="1_3lwwt"]
+[ext_resource type="PackedScene" uid="uid://bi0ytrh16p0uu" path="res://Player/player.tscn" id="2_gdnoe"]
 
 [node name="Map1" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(135, 81)
-script = ExtResource("2_dobce")
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-1, 13)
-scale = Vector2(0.453333, 0.4)
-texture = ExtResource("3_7b8ny")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1, 24)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_jv4oo")
+y_sort_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 20, 18, 13, 50, 34, 79, 22, 131, 36, 139, 56, 123, 104, 154, 115, 134, 145, 141, 189, 122, 234, 152, 268, 161, 289, 100, 315, 73, 284, 31, 319, 0, 320, 179, 0, 180)
-
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 1, 23, 10, 33, 0, 75, 15, 132, 1, 189, 18, 232, 1, 257, 13, 319, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_gdnoe")]
+position = Vector2(177, 55)
+
+[node name="Pickaxe" parent="." instance=ExtResource("1_3lwwt")]
+position = Vector2(111, 92)
+
+[node name="Pickaxe2" parent="." instance=ExtResource("1_3lwwt")]
+position = Vector2(208, 99)
+
+[node name="Pickaxe3" parent="." instance=ExtResource("1_3lwwt")]
+position = Vector2(165, 132)
