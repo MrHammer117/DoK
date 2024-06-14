@@ -12,8 +12,8 @@ y_sort_enabled = true
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 1, 23, 10, 33, 0, 75, 15, 132, 1, 189, 18, 232, 1, 257, 13, 319, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_gdnoe")]
-position = Vector2(160, 90)
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_gdnoe")]
+position = Vector2(177, 55)
 
 [node name="Pickaxe" parent="." instance=ExtResource("1_3lwwt")]
 position = Vector2(111, 92)
@@ -24,5 +24,5 @@ position = Vector2(208, 99)
 [node name="Pickaxe3" parent="." instance=ExtResource("1_3lwwt")]
 position = Vector2(165, 132)
 
-[node name="ElfMeleeSprite" parent="." instance=ExtResource("3_iv42k")]
-position = Vector2(38, 143)
+[node name="ElfMelee" parent="." instance=ExtResource("3_iv42k")]
+position = Vector2(46, 139)

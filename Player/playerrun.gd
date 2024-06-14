@@ -3,6 +3,9 @@ const MAX_SPEED = 150
 const FRICTION = 500
 
 const ACCELERATION = 500
+
+func _ready():
+	add_to_group("Player")
 # I do not need to create velocity or what I originally had movement, because velocity is alreayd a 
 # member of the class CharacterBody2D
 func _physics_process(delta):
@@ -15,7 +18,7 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized( )
 	if input_vector != Vector2.ZERO:
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
-		print(velocity)
+		#print(velocity)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 		
