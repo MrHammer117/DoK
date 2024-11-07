@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck451j43iqgv8"]
+[gd_scene load_steps=8 format=3 uid="uid://ck451j43iqgv8"]
 
 [ext_resource type="Script" path="res://Enemies/Elves/Scripts/ElfMovement.gd" id="1_cl8f3"]
 [ext_resource type="Script" path="res://Enemies/StateBase/stateMachine.gd" id="1_hstuc"]
@@ -9,6 +9,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xpyra"]
 radius = 7.0
 height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oomqa"]
+radius = 26.0192
 
 [node name="ElfMeleeSprite" type="CharacterBody2D"]
 script = ExtResource("1_cl8f3")
@@ -33,3 +36,9 @@ enemy = NodePath("../..")
 [node name="ElfFollow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_43rjh")
 enemy = NodePath("../..")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -26)
+shape = SubResource("CircleShape2D_oomqa")

@@ -2,27 +2,44 @@ extends CharacterBody2D
 const MAX_SPEED = 150
 const FRICTION = 500
 
-const ACCELERATION = 500
+var enemy_inattack_range = false
+var enemy_attack_cooldown = true
+var health = 100
+var player_alive = true
+
+
+@export var speed = 400
 
 func _ready():
 	add_to_group("Player")
 # I do not need to create velocity or what I originally had movement, because velocity is alreayd a 
 # member of the class CharacterBody2D
+
+func get_input(delta):
+	
+	var motion = Vector2()
+	
+	position += Input.get_vector("left", "right", "up", "down") * speed * delta
+	
+	look_at(get_global_mouse_position())
+	
+
 func _physics_process(delta):
-	var input_vector = Vector2.ZERO
-	#This line below takes input from the user and transmits it straight to the character
-	#left and right
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	#up and down
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	input_vector = input_vector.normalized( )
-	if input_vector != Vector2.ZERO:
-		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
-		#print(velocity)
-	else:
-		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
-		
-		
-	#This automatically uses the variable velocity, unlike the tutorial I am watching I do not need
-	#to pass a variable, this already does everything for me!!!
+	get_input(delta)
 	move_and_slide()
+
+func player():
+	pass
+
+
+func _on_hitbox_body_entered(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = true
+
+func _on_hitbox_body_exited(body):
+	if body.has_method("enemy"):
+		enemy_inattack_range = false
+
+func enemy_attack():
+	if enemy_inattack_range:
+		print("damaged")

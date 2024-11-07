@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi0ytrh16p0uu"]
+[gd_scene load_steps=5 format=3 uid="uid://bi0ytrh16p0uu"]
 
 [ext_resource type="Script" path="res://Player/playerRun.gd" id="1_exapt"]
 [ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="2_h0myh"]
@@ -7,17 +7,30 @@
 radius = 5.0
 height = 20.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rv8hm"]
+radius = 19.0
+
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_exapt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -11)
+position = Vector2(16, -1)
+rotation = 1.54861
 scale = Vector2(0.453333, 0.4)
 texture = ExtResource("2_h0myh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = 1.5708
+rotation = 3.12829
 shape = SubResource("CapsuleShape2D_jv4oo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(14, -1)
+shape = SubResource("CircleShape2D_rv8hm")
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
