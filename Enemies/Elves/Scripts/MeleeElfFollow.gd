@@ -2,7 +2,7 @@ extends State
 class_name followElf
 
 @export var enemy: CharacterBody2D
-@export var move_speed := 40.0
+@export var move_speed := 150.0
 var player: CharacterBody2D
 
 # Signal to handle state transitions
@@ -28,5 +28,5 @@ func Physics_Update(delta: float):
 	else:
 		enemy.velocity = Vector2()
 	
-	if direction.length() > 200:
+	if direction.length() > 500:
 		Transitioned.emit(self, "elfMeleeIdle")
