@@ -24,8 +24,6 @@ texture = ExtResource("2_h0myh")
 rotation = 3.12829
 shape = SubResource("CapsuleShape2D_jv4oo")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Hitbox" type="Area2D" parent="."]
 position = Vector2(0, 1)
 

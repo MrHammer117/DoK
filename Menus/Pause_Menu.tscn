@@ -1,17 +1,36 @@
-[gd_scene format=3 uid="uid://b6nuphlciggs0"]
+[gd_scene load_steps=2 format=3 uid="uid://b6nuphlciggs0"]
+
+[ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_xggdd"]
 
 [node name="PauseMenu" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 537.0
 offset_top = 231.0
 offset_right = 537.0
 offset_bottom = 231.0
+script = ExtResource("1_xggdd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -537.0
+offset_top = -231.0
+offset_right = -497.0
+offset_bottom = -191.0
+scale = Vector2(28.8499, 16.2745)
+color = Color(0.144063, 0.144063, 0.144063, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -28,3 +47,8 @@ text = "Stats"
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/StatsButton" to="." method="_on_stats_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
