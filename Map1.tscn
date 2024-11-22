@@ -1,36 +1,77 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc810276m7i0l"]
+[gd_scene load_steps=5 format=3 uid="uid://cc810276m7i0l"]
 
-[ext_resource type="PackedScene" uid="uid://cvnh5k2h12g6t" path="res://Items/pickaxe.tscn" id="1_3lwwt"]
 [ext_resource type="Script" path="res://map_1.gd" id="1_gpglv"]
 [ext_resource type="PackedScene" uid="uid://bi0ytrh16p0uu" path="res://Player/player.tscn" id="2_gdnoe"]
+[ext_resource type="Texture2D" uid="uid://djohcerkh1tx8" path="res://Textures/Maps/Minecart Disaster.jpg" id="2_l8crp"]
 [ext_resource type="PackedScene" uid="uid://b6nuphlciggs0" path="res://Menus/Pause_Menu.tscn" id="2_nnhgd"]
-[ext_resource type="PackedScene" uid="uid://ck451j43iqgv8" path="res://Enemies/Elves/Sprites/ElfMelee.tscn" id="3_iv42k"]
 
 [node name="Map1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_gpglv")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -90.0
+offset_top = -849.0
+offset_right = 9910.0
+offset_bottom = 4151.0
+scale = Vector2(0.304553, 0.308307)
+texture = ExtResource("2_l8crp")
+stretch_mode = 4
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 1, 23, 10, 33, 0, 75, 15, 132, 1, 189, 18, 232, 1, 257, 13, 319, 0)
+[node name="Zone blocking" type="StaticBody2D" parent="TextureRect"]
+physics_interpolation_mode = 2
+position = Vector2(-9.53674e-06, -12.974)
+scale = Vector2(3.2835, 3.24352)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+position = Vector2(1379, 756)
+scale = Vector2(213.592, 115.979)
+polygon = PackedVector2Array(-6.42813, -6.42356, 7.7484, -6.43219, 7.79054, 6.7081, 6.99931, 6.76845, 6.89631, -1.26747, 6.68563, -3.45752, 6.1519, -4.67325, 5.52922, -5.0785, 4.75204, -5.21645, -6.4609, -5.17334)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(-1, 17, -2, 568, 77, 569, 78, 884, 0, 884, 0, 1401, 95, 1481, 206, 1492, 270, 1519, 335, 1482, 455, 1440, 615, 1505, 925, 1403, 1106, 1485, 1236, 1508, 1349, 1467, 1445, 1493, 1526, 1451, 1690, 1493, 1793, 1399, 1940, 1493, 2049, 1486, 2157, 1410, 2236, 1305, 2202, 1228, 2264, 1001, 2244, 945, 2123, 901, 2031, 768, 1889, 892, 1887, 570, 2396, 567, 2493, 677, 2540, 769, 2557, 881, 2557, 1546, 3, 1546, -141, 1403, -102, 25)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(261, 568, 919, 571, 919, 884, 265, 885)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1107, 574, 1686, 571, 1693, 881, 1109, 886)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(568, 1145, 629, 1162, 646, 1209, 581, 1243, 511, 1215)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1924, 1132, 1920, 1159, 1948, 1157, 1967, 1180, 1950, 1220, 1916, 1230, 1877, 1220, 1840, 1220, 1849, 1196, 1842, 1165)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1348, 947, 1417, 963, 1408, 1019, 1341, 1024, 1308, 989)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(638, 1389, 639, 1446, 577, 1443, 578, 1392)
+
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1630, 1261, 1632, 1297, 1594, 1298, 1593, 1260)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(2095, 1324, 2099, 1380, 2039, 1381, 2039, 1325)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1981, 876, 2060, 874, 2061, 950, 1983, 950)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(655, 466, 699, 465, 702, 511, 652, 509)
+
+[node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(1348, 468, 1416, 445, 1429, 483, 1367, 517)
+
+[node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(2482, 573, 2504, 635, 2540, 603, 2518, 565)
+
+[node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
+polygon = PackedVector2Array(2560, 1542, 2744, 1854, 2880, 1539)
 
 [node name="Player" parent="." instance=ExtResource("2_gdnoe")]
-position = Vector2(160, 90)
-
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-
-[node name="Pickaxe" parent="." instance=ExtResource("1_3lwwt")]
-position = Vector2(111, 92)
-
-[node name="Pickaxe2" parent="." instance=ExtResource("1_3lwwt")]
-position = Vector2(208, 99)
-
-[node name="Pickaxe3" parent="." instance=ExtResource("1_3lwwt")]
-position = Vector2(165, 132)
-
-[node name="ElfMeleeSprite" parent="." instance=ExtResource("3_iv42k")]
-position = Vector2(38, 143)
+position = Vector2(582, 312)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
