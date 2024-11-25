@@ -1,19 +1,28 @@
 extends CharacterBody2D
 
-var enemy_inattack_range = false
-var enemy_attack_cooldown = true
 var health = 100
-var player_alive = true
  
 var bulletSpeed = 300
 var bullet = preload("res://Weapons/Bullet.tscn")
 
+var player_health = 150
 
 const MOVE_SPEED: float = 500
 @export var speed_multiplier: int = 1
 
 func _ready():
 	add_to_group("Player")
+	
+func _process(delta: float) -> void:
+	connect_enemy_signals()
+	if player_health <= 0:
+		get_tree().change_scene_to_file("res://Menus/Main_Menu.tscn")
+
+func connect_enemy_signals():
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	for enemy in enemies:
+		if enemy.has_signal("damage_dealt"):
+			enemy.damage_dealt.connect(damaged)
 
 func move() -> void:
 	var movement: Vector2 = Vector2.ZERO
@@ -31,23 +40,10 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("click"):
 		fire()
 
-func player():
-	pass
-
 func fire():
 	var bullet_instance = bullet.instantiate()
 	owner.add_child(bullet_instance)
 	bullet_instance.transform = $ShootFromHere.global_transform
 	
-
-func _on_hitbox_body_entered(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
-
-func _on_hitbox_body_exited(body):
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
-
-func enemy_attack():
-	if enemy_inattack_range:
-		print("damaged")
+func damaged(damage):
+	player_health = player_health-damage
