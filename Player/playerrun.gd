@@ -13,6 +13,7 @@ const MOVE_SPEED: float = 500
 func _ready():
 	add_to_group("Player")
 	
+	
 func _process(delta: float) -> void:
 	connect_enemy_signals()
 	if player_health <= 0:
@@ -22,6 +23,8 @@ func connect_enemy_signals():
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for enemy in enemies:
 		if enemy.has_signal("damage_dealt"):
+			if enemy.damage_dealt.is_connected(damaged):
+				enemy.damage_dealt.disconnect(damaged)
 			enemy.damage_dealt.connect(damaged)
 
 func move() -> void:
