@@ -12,6 +12,7 @@ radius = 19.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
+slide_on_ceiling = false
 script = ExtResource("1_exapt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

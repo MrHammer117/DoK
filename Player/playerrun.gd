@@ -7,6 +7,7 @@ var bullet = preload("res://Weapons/Bullet.tscn")
 
 var player_health = 150
 
+
 const MOVE_SPEED: float = 500
 @export var speed_multiplier: int = 1
 

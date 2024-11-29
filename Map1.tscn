@@ -80,5 +80,53 @@ position = Vector2(582, 312)
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_nnhgd")]
 process_mode = 3
 
+[node name="Spawner rounds 1-5" type="Node2D" parent="."]
+position = Vector2(-219, 348)
+
+[node name="Spawner1" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(-4, -133)
+
+[node name="Spawner2" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(2627, 963)
+
+[node name="Spawner3" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(-33, 829)
+
+[node name="Spawner4" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(-35, 612)
+
+[node name="Spawner5" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(-24, -282)
+
+[node name="Spawner6" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(-6, 742)
+
+[node name="Spawner8" type="Node2D" parent="Spawner rounds 1-5"]
+position = Vector2(2520, 1000)
+
+[node name="Spawner Rounds 5-15" type="Node2D" parent="."]
+position = Vector2(-4, -4)
+
+[node name="Spawner9" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(2452, 1228)
+
+[node name="Spawner10" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(2478, 1276)
+
+[node name="Spawner11" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(2359, 1249)
+
+[node name="Spawner12" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(-170, 1165)
+
+[node name="Spawner13" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(-170, 1032)
+
+[node name="Spawner14" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(-154, 135)
+
+[node name="Spawner15" type="Node2D" parent="Spawner Rounds 5-15"]
+position = Vector2(-111, 287)
+
 [node name="ElfMeleeSprite" parent="." instance=ExtResource("3_2bugv")]
-position = Vector2(731, 347)
+position = Vector2(840, 317)
