@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://ypuxhuokkg6e"]
+
+[ext_resource type="Script" path="res://Menus/YOU_WIN!.gd" id="1_4m5gr"]
+[ext_resource type="Texture2D" uid="uid://lklow8yg84np" path="res://Textures/GrabAPint!.jpg" id="2_4wwmr"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="3_xfxre"]
+
+[node name="YouWin!" type="Node2D"]
+script = ExtResource("1_4m5gr")
+
+[node name="GrabAPint!" type="Sprite2D" parent="."]
+position = Vector2(590, 320)
+scale = Vector2(1.24868, 1.24868)
+texture = ExtResource("2_4wwmr")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 169.0
+offset_top = 260.0
+offset_right = 1037.0
+offset_bottom = 313.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_xfxre")
+theme_override_font_sizes/font_size = 50
+text = "You Have Successfully Defended the mine!"
+horizontal_alignment = 1
+
+[node name="Return" type="Button" parent="."]
+offset_left = 351.0
+offset_top = 333.0
+offset_right = 811.0
+offset_bottom = 445.0
+theme_override_colors/font_color = Color(0, 0.643137, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_xfxre")
+theme_override_font_sizes/font_size = 100
+text = "Main menu"
+
+[connection signal="pressed" from="Return" to="." method="_on_return_pressed"]

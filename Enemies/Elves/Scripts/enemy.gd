@@ -2,7 +2,10 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var attack_distance: float = 35
-@export var attack_cooldown: float = .5  # Cooldown between attacks
+@export var attack_cooldown: float = .2  # Cooldown between attacks
+
+var wanderDirection : Vector2
+var wanderTime : float
 
 enum State { IDLE, CHASE, ATTACK, FLEE, DEATH }
 var current_state = State.IDLE
@@ -36,8 +39,11 @@ func _physics_process(delta):
 			death()
 
 func idle_behavior():
-	
-	
+
+	wanderDirection = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
+	wanderTime = randf_range(1, 3)
+	velocity = wanderDirection * speed
+	move_and_slide()
 	
 	if global_position.distance_to(player.global_position) <= 1000:
 		current_state = State.CHASE  # Switch to chase immediately if player exists
@@ -49,6 +55,7 @@ func idle_behavior():
 		current_state = State.DEATH
 
 func chase_behavior():
+	look_at(player.global_position)
 	var direction = (player.global_position - global_position).normalized()
 	velocity = direction * speed
 	move_and_slide()
@@ -68,6 +75,7 @@ func chase_behavior():
 		current_state = State.DEATH
 
 func attack_behavior(delta):
+	look_at(player.global_position)
 	attack_timer += delta
 	if attack_timer >= attack_cooldown:
 		# Attack logic here (e.g., apply damage, trigger animation)
@@ -110,3 +118,10 @@ func death():
 	enemy_health = 0
 	dead = true
 	queue_free()
+
+func Update(delta: float):
+	if wanderTime > 0:
+		wanderTime -= delta
+	else: 
+		idle_behavior()
+		

@@ -1,29 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://brrmdvavi2g5a"]
+[gd_scene load_steps=4 format=3 uid="uid://brrmdvavi2g5a"]
 
 [ext_resource type="Script" path="res://Menus/main_menu.gd" id="1_d3f60"]
+[ext_resource type="Texture2D" uid="uid://dsefrpgf8kgex" path="res://Textures/DwarvenMine.jpg" id="2_i6xo1"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="3_dtl36"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_d3f60")
 
+[node name="DwarvenMine" type="Sprite2D" parent="."]
+position = Vector2(582, 335)
+scale = Vector2(1.13456, 1.13456)
+texture = ExtResource("2_i6xo1")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 262.0
-offset_right = 620.0
-offset_bottom = 363.0
+offset_left = 260.0
+offset_top = 222.0
+offset_right = 909.0
+offset_bottom = 492.0
+alignment = 1
+
+[node name="The Depths of Kholdor" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.890196, 0.403922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 23
+theme_override_fonts/font = ExtResource("3_dtl36")
+theme_override_font_sizes/font_size = 72
+text = "The Depths Of Kholdor"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.75653, 0.453583, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_dtl36")
+theme_override_font_sizes/font_size = 50
 text = "PLAY"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.681901, 0.146271, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_dtl36")
+theme_override_font_sizes/font_size = 50
 text = "OPTIONS"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_dtl36")
+theme_override_font_sizes/font_size = 50
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

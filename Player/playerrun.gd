@@ -8,7 +8,7 @@ var bullet = preload("res://Weapons/Bullet.tscn")
 var player_health = 150
 
 
-const MOVE_SPEED: float = 200
+const MOVE_SPEED: float = 150
 @export var speed_multiplier: int = 1
 
 func _ready():

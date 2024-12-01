@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x02xje5q2d07"
-valid=false
+uid="uid://cysvf17hcbcdt"
+path="res://.godot/imported/Pause_screen.jpg-aff24a019f560efb48213dd248ca5351.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://Textures/Icon.svg"
+source_file="res://Textures/Pause_screen.jpg"
+dest_files=["res://.godot/imported/Pause_screen.jpg-aff24a019f560efb48213dd248ca5351.ctex"]
 
 [params]
 
@@ -28,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

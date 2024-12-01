@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6nuphlciggs0"]
+[gd_scene load_steps=4 format=3 uid="uid://b6nuphlciggs0"]
 
 [ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_xggdd"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="2_rbqb5"]
+[ext_resource type="Texture2D" uid="uid://cysvf17hcbcdt" path="res://Textures/Pause_screen.jpg" id="2_upuw7"]
 
 [node name="PauseMenu" type="Control"]
 visible = false
@@ -21,31 +23,58 @@ offset_bottom = -191.0
 scale = Vector2(28.8499, 16.2745)
 color = Color(0.144063, 0.144063, 0.144063, 1)
 
+[node name="PauseScreen" type="Sprite2D" parent="."]
+position = Vector2(118, 30)
+texture = ExtResource("2_upuw7")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -96.0
+offset_top = -50.0
+offset_right = 179.0
+offset_bottom = 314.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.45098, 0, 1)
+theme_override_constants/shadow_offset_x = 20
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_rbqb5")
+theme_override_font_sizes/font_size = 100
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("2_rbqb5")
+theme_override_font_sizes/font_size = 50
 text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_rbqb5")
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="StatsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_rbqb5")
+theme_override_font_sizes/font_size = 50
 text = "Stats"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_rbqb5")
+theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
