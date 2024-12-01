@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export var speed: float = 100.0
-@export var attack_distance: float = 100
-@export var attack_cooldown: float = 1  # Cooldown between attacks
+@export var attack_distance: float = 35
+@export var attack_cooldown: float = .5  # Cooldown between attacks
 
 enum State { IDLE, CHASE, ATTACK, FLEE, DEATH }
 var current_state = State.IDLE
@@ -10,7 +10,7 @@ var attack_timer = 0.0
 var player: Node2D  
 var rng = RandomNumberGenerator.new()
 signal damage_dealt(damage_amount)
-var enemy_health = 40
+var enemy_health = 80
 var dead = false
 
 func _ready():
@@ -36,7 +36,10 @@ func _physics_process(delta):
 			death()
 
 func idle_behavior():
-	if global_position.distance_to(player.global_position) <= 500:
+	
+	
+	
+	if global_position.distance_to(player.global_position) <= 1000:
 		current_state = State.CHASE  # Switch to chase immediately if player exists
 	
 	if enemy_health < 20:
@@ -55,7 +58,7 @@ func chase_behavior():
 		current_state = State.ATTACK
 		attack_timer = 0.0
 		
-	if global_position.distance_to(player.global_position) >= 500:
+	if global_position.distance_to(player.global_position) >= 1000:
 		current_state = State.IDLE
 		
 	if enemy_health < 20:
@@ -98,6 +101,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		var my_random_number = rng.randf_range(10.0, 20.0)
 		enemy_damaged(my_random_number)
+		area.queue_free()
 		
 func enemy_damaged(damage):
 	enemy_health -= damage

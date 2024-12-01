@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi0ytrh16p0uu"]
+[gd_scene load_steps=6 format=3 uid="uid://bi0ytrh16p0uu"]
 
 [ext_resource type="Script" path="res://Player/playerRun.gd" id="1_exapt"]
 [ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="2_h0myh"]
+[ext_resource type="AudioStream" uid="uid://bn2yh6gce62e4" path="res://Sounds/blunderbuss-shot-101soundboards.mp3" id="2_jq5gs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jv4oo"]
 radius = 1.99982
@@ -14,6 +15,9 @@ radius = 19.0
 y_sort_enabled = true
 slide_on_ceiling = false
 script = ExtResource("1_exapt")
+
+[node name="Blunderbuss-shot-101Soundboards" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jq5gs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 3.1665e-08)
@@ -36,6 +40,7 @@ shape = SubResource("CircleShape2D_rv8hm")
 position = Vector2(35, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]

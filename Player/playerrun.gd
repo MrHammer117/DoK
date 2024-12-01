@@ -8,7 +8,7 @@ var bullet = preload("res://Weapons/Bullet.tscn")
 var player_health = 150
 
 
-const MOVE_SPEED: float = 500
+const MOVE_SPEED: float = 200
 @export var speed_multiplier: int = 1
 
 func _ready():
@@ -45,9 +45,11 @@ func _physics_process(delta: float) -> void:
 		fire()
 
 func fire():
+	$"Blunderbuss-shot-101Soundboards".play()
 	var bullet_instance = bullet.instantiate()
 	owner.add_child(bullet_instance)
 	bullet_instance.transform = $ShootFromHere.global_transform
+	
 	
 func damaged(damage):
 	player_health = player_health-damage

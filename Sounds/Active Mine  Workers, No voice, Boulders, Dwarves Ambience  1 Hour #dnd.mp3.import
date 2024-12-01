@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1qvvy4akg5m8"
+path="res://.godot/imported/Active Mine  Workers, No voice, Boulders, Dwarves Ambience  1 Hour #dnd.mp3-86916389ca565624121a4175415ac84b.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Active Mine  Workers, No voice, Boulders, Dwarves Ambience  1 Hour #dnd.mp3"
+dest_files=["res://.godot/imported/Active Mine  Workers, No voice, Boulders, Dwarves Ambience  1 Hour #dnd.mp3-86916389ca565624121a4175415ac84b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

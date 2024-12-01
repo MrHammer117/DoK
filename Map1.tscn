@@ -1,14 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc810276m7i0l"]
+[gd_scene load_steps=7 format=3 uid="uid://cc810276m7i0l"]
 
 [ext_resource type="Script" path="res://map_1.gd" id="1_gpglv"]
 [ext_resource type="PackedScene" uid="uid://bi0ytrh16p0uu" path="res://Player/player.tscn" id="2_gdnoe"]
 [ext_resource type="Texture2D" uid="uid://djohcerkh1tx8" path="res://Textures/Maps/Minecart Disaster.jpg" id="2_l8crp"]
 [ext_resource type="PackedScene" uid="uid://b6nuphlciggs0" path="res://Menus/Pause_Menu.tscn" id="2_nnhgd"]
 [ext_resource type="PackedScene" uid="uid://ck451j43iqgv8" path="res://Enemies/Elves/Sprites/ElfMelee.tscn" id="3_2bugv"]
+[ext_resource type="AudioStream" uid="uid://1qvvy4akg5m8" path="res://Sounds/Active Mine  Workers, No voice, Boulders, Dwarves Ambience  1 Hour #dnd.mp3" id="6_p6ch7"]
 
 [node name="Map1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_gpglv")
+elf_scene = ExtResource("3_2bugv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -307.0
@@ -72,61 +74,58 @@ polygon = PackedVector2Array(2482, 573, 2504, 635, 2540, 603, 2518, 565)
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="TextureRect/Zone blocking"]
 polygon = PackedVector2Array(2560, 1542, 2744, 1854, 2880, 1539)
 
-[node name="Player" parent="." instance=ExtResource("2_gdnoe")]
-position = Vector2(582, 312)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_nnhgd")]
 process_mode = 3
 
-[node name="Spawner rounds 1-5" type="Node2D" parent="."]
-position = Vector2(-219, 348)
+[node name="Spawner1" type="Marker2D" parent="."]
+position = Vector2(64, 319)
 
-[node name="Spawner1" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(-4, -133)
+[node name="Spawner2" type="Marker2D" parent="."]
+position = Vector2(2341, 580)
 
-[node name="Spawner2" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(2627, 963)
+[node name="Spawner3" type="Marker2D" parent="."]
+position = Vector2(103, 1159)
 
-[node name="Spawner3" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(-33, 829)
+[node name="Spawner4" type="Marker2D" parent="."]
+position = Vector2(234, 896)
 
-[node name="Spawner4" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(-35, 612)
+[node name="Spawner5" type="Marker2D" parent="."]
+position = Vector2(1465, 325)
 
-[node name="Spawner5" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(-24, -282)
+[node name="Spawner6" type="Marker2D" parent="."]
+position = Vector2(1068, 1202)
 
-[node name="Spawner6" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(-6, 742)
+[node name="Spawner7" type="Marker2D" parent="."]
 
-[node name="Spawner8" type="Node2D" parent="Spawner rounds 1-5"]
-position = Vector2(2520, 1000)
+[node name="Spawner8" type="Marker2D" parent="."]
+position = Vector2(2262, 154)
 
-[node name="Spawner Rounds 5-15" type="Node2D" parent="."]
-position = Vector2(-4, -4)
+[node name="Spawner9" type="Marker2D" parent="."]
+position = Vector2(2141, 277)
 
-[node name="Spawner9" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(2452, 1228)
+[node name="Spawner10" type="Marker2D" parent="."]
+position = Vector2(2404, 885)
 
-[node name="Spawner10" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(2478, 1276)
+[node name="Spawner11" type="Marker2D" parent="."]
+position = Vector2(2367, 298)
 
-[node name="Spawner11" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(2359, 1249)
+[node name="Spawner12" type="Marker2D" parent="."]
+position = Vector2(1363, 894)
 
-[node name="Spawner12" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(-170, 1165)
+[node name="Spawner13" type="Marker2D" parent="."]
+position = Vector2(629, 1006)
 
-[node name="Spawner13" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(-170, 1032)
+[node name="Spawner14" type="Marker2D" parent="."]
+position = Vector2(526, 143)
 
-[node name="Spawner14" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(-154, 135)
+[node name="Spawner15" type="Marker2D" parent="."]
+position = Vector2(1615, 145)
 
-[node name="Spawner15" type="Node2D" parent="Spawner Rounds 5-15"]
-position = Vector2(-111, 287)
+[node name="Player" parent="." instance=ExtResource("2_gdnoe")]
+position = Vector2(542, 331)
 
-[node name="ElfMeleeSprite" parent="." instance=ExtResource("3_2bugv")]
-position = Vector2(840, 317)
+[node name="ActiveMineWorkers,NoVoice,Boulders,DwarvesAmbience1Hour#dnd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p6ch7")
+volume_db = -10.0
