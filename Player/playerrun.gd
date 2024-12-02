@@ -1,11 +1,16 @@
 extends CharacterBody2D
 
+const healthMAX = 150
 var health = 100
  
+@onready var health_bar = $Health/Healthbar
+@onready var health_bar_max_width = health_bar.size.x
+
 var bulletSpeed = 300
 var bullet = preload("res://Weapons/Bullet.tscn")
 
 var player_health = 150
+var hp = healthMAX
 
 
 const MOVE_SPEED: float = 150
@@ -13,7 +18,7 @@ const MOVE_SPEED: float = 150
 
 func _ready():
 	add_to_group("Player")
-	
+	update_health_bar() 
 	
 func _process(delta: float) -> void:
 	connect_enemy_signals()
@@ -53,3 +58,9 @@ func fire():
 	
 func damaged(damage):
 	player_health = player_health-damage
+	player_health = clamp(player_health, 0, 150)
+	update_health_bar()
+	
+func update_health_bar():
+	var health_percentage = float(player_health) / healthMAX
+	health_bar.size.x = health_bar_max_width * health_percentage

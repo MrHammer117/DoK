@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bi0ytrh16p0uu"]
+[gd_scene load_steps=7 format=3 uid="uid://bi0ytrh16p0uu"]
 
 [ext_resource type="Script" path="res://Player/playerRun.gd" id="1_exapt"]
 [ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="2_h0myh"]
 [ext_resource type="AudioStream" uid="uid://bn2yh6gce62e4" path="res://Sounds/blunderbuss-shot-101soundboards.mp3" id="2_jq5gs"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="4_ofag7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jv4oo"]
 radius = 1.99982
@@ -13,6 +14,7 @@ radius = 19.0
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(288, 162)
 slide_on_ceiling = false
 script = ExtResource("1_exapt")
 
@@ -43,6 +45,25 @@ position = Vector2(35, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="Health" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" type="ColorRect" parent="Health"]
+offset_left = 19.0
+offset_top = 30.0
+offset_right = 59.0
+offset_bottom = 70.0
+scale = Vector2(2.60373, 0.445569)
+color = Color(0.407843, 0.862745, 0, 1)
+
+[node name="Label" type="Label" parent="Health"]
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 59.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_ofag7")
+text = "HEALTH"
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
