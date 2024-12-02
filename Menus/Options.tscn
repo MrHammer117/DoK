@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://cwxoi226r27s8"]
+[gd_scene load_steps=5 format=3 uid="uid://cwxoi226r27s8"]
 
-[node name="Options" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bop2us3ywtaiv" path="res://Textures/inTheMines.jpg" id="1_dry3v"]
+[ext_resource type="Script" path="res://Menus/options.gd" id="1_y6rl8"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="2_m00nn"]
+[ext_resource type="PackedScene" uid="uid://bxceakyejgjch" path="res://Menus/Input Button Scene/inputbutton.tscn" id="3_v3x0o"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y6rl8")
+
+[node name="InTheMines" type="Sprite2D" parent="."]
+position = Vector2(975, 542)
+scale = Vector2(3.25559, 2.81517)
+texture = ExtResource("1_dry3v")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -572.0
+offset_top = -462.0
+offset_right = 572.0
+offset_bottom = 462.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Inputbutton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("3_v3x0o")]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_m00nn")
+text = "Exit"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

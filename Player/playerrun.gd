@@ -35,10 +35,10 @@ func connect_enemy_signals():
 
 func move() -> void:
 	var movement: Vector2 = Vector2.ZERO
-	if Input.is_action_pressed("left"): movement.x -= 1.0
-	if Input.is_action_pressed("right"): movement.x += 1.0
-	if Input.is_action_pressed("up"): movement.y -= 1.0
-	if Input.is_action_pressed("down"): movement.y += 1.0
+	if Input.is_action_pressed("Left"): movement.x -= 1.0
+	if Input.is_action_pressed("Right"): movement.x += 1.0
+	if Input.is_action_pressed("Up"): movement.y -= 1.0
+	if Input.is_action_pressed("Down"): movement.y += 1.0
 	velocity = movement.normalized() * (MOVE_SPEED * speed_multiplier)
 	move_and_slide()
 	
@@ -46,7 +46,7 @@ func move() -> void:
 func _physics_process(delta: float) -> void:
 	move()
 	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("Shoot"):
 		fire()
 
 func fire():

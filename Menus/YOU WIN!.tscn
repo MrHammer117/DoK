@@ -8,15 +8,19 @@
 script = ExtResource("1_4m5gr")
 
 [node name="GrabAPint!" type="Sprite2D" parent="."]
-position = Vector2(590, 320)
-scale = Vector2(1.24868, 1.24868)
+position = Vector2(982, 550)
+scale = Vector2(2.17089, 2.17089)
 texture = ExtResource("2_4wwmr")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 169.0
-offset_top = 260.0
-offset_right = 1037.0
-offset_bottom = 313.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 518.0
+offset_top = 465.0
+offset_right = 1386.0
+offset_bottom = 518.0
+grow_horizontal = 2
 theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("3_xfxre")
 theme_override_font_sizes/font_size = 50
@@ -24,10 +28,10 @@ text = "You Have Successfully Defended the mine!"
 horizontal_alignment = 1
 
 [node name="Return" type="Button" parent="."]
-offset_left = 351.0
-offset_top = 333.0
-offset_right = 811.0
-offset_bottom = 445.0
+offset_left = 734.0
+offset_top = 564.0
+offset_right = 1194.0
+offset_bottom = 676.0
 theme_override_colors/font_color = Color(0, 0.643137, 0, 1)
 theme_override_constants/outline_size = 25
 theme_override_fonts/font = ExtResource("3_xfxre")

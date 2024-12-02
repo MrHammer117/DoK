@@ -1,5 +1,7 @@
 extends Control
 
+@onready var optionsMenu = $Options
+
 var _is_paused:bool = false:
 	set(value):
 		_is_paused = value
@@ -7,14 +9,14 @@ var _is_paused:bool = false:
 		visible = _is_paused
 
 func _unhandled_input(event:InputEvent) -> void:
-	if event.is_action_pressed("escape"):
+	if event.is_action_pressed("Pause"):
 		_is_paused = !_is_paused
 
 func _on_resume_button_pressed() -> void:
 	_is_paused = false
 
 func _on_options_button_pressed() -> void:
-	pass # Replace with function body.
+	optionsMenu.visible = true
 
 
 func _on_stats_button_pressed() -> void:
