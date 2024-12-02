@@ -31,6 +31,7 @@ text = "You Have Successfully Defended the mine!"
 horizontal_alignment = 1
 
 [node name="Return" type="Button" parent="."]
+layout_mode = 0
 offset_left = 734.0
 offset_top = 564.0
 offset_right = 1194.0

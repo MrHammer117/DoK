@@ -21,7 +21,6 @@ func spawnEnemies():
 	spawnBoys()
 	
 func spawnBoys():
-	current_wave=14
 	while current_wave <= 5:
 		var spawnpoints = [$Spawner1,$Spawner2,$Spawner3,$Spawner4,$Spawner5,$Spawner6,$Spawner7]
 		for spawnpoint in spawnpoints:
