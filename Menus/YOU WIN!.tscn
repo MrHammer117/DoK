@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://lklow8yg84np" path="res://Textures/GrabAPint!.jpg" id="2_4wwmr"]
 [ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="3_xfxre"]
 
-[node name="YouWin!" type="Node2D"]
+[node name="YouWin!" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_4m5gr")
 
 [node name="GrabAPint!" type="Sprite2D" parent="."]
@@ -13,6 +15,7 @@ scale = Vector2(2.17089, 2.17089)
 texture = ExtResource("2_4wwmr")
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

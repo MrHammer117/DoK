@@ -21,6 +21,7 @@ func spawnEnemies():
 	spawnBoys()
 	
 func spawnBoys():
+	current_wave=14
 	while current_wave <= 5:
 		var spawnpoints = [$Spawner1,$Spawner2,$Spawner3,$Spawner4,$Spawner5,$Spawner6,$Spawner7]
 		for spawnpoint in spawnpoints:
@@ -41,6 +42,7 @@ func spawnBoys():
 		current_wave +=1
 		print(current_wave)
 	if current_wave == 15:
+		get_tree().paused = false
 		get_tree().change_scene_to_file("res://Menus/YOU WIN!.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -23,36 +23,30 @@ scale = Vector2(0.308263, 0.308592)
 texture = ExtResource("2_l8crp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MAP"]
-scale = Vector2(1, 1)
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(0, 502.282, 7863.41, 505.523, 7869.9, 482.839, 8382.45, 515.244, 8839.85, 677.271, 9167.49, 1098.54, 9294.01, 1536.01, 9339.42, 2028.57, 9329.69, 2812.78, 9404.3, 4993.66, 8398.67, 5000.14, 8405.15, 2838.7, 8350.01, 2508.17, 8168.34, 2174.4, 7869.9, 1830.9, 6202.49, 1834.14, 6202.49, 2864.63, 6659.89, 2482.25, 6971.32, 2916.48, 7318.42, 3055.82, 7418.98, 3256.73, 7302.2, 3590.51, 7198.39, 3953.45, 7328.15, 4190.01, 7084.85, 4533.5, 6737.75, 4812.19, 6361.45, 4838.11, 7795.29, 5298.27, 9585.96, 5175.13, 9683.28, 1707.76, 9050.71, -187.951, 1592.79, 181.47)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3.24365, 505.523, 0, 1827.66, 249.786, 1830.9, 256.274, 2861.39, 3.24365, 2861.39, -3.24414, 4520.54, 321.154, 4792.74, 658.528, 4815.43, 901.827, 4915.88, 1135.39, 4770.06, 1495.48, 4669.6, 2037.22, 4864.04, 3033.12, 4520.54, 3610.55, 4805.71, 4106.88, 4870.52, 4431.28, 4734.41, 4752.43, 4834.87, 5002.22, 4692.29, 5543.96, 4847.83, 5874.85, 4527.02, 6351.71, 4838.11, 2173.47, 5476.5, -107.052, 4935.33, -256.275, 2589.18)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(866.143, 1840.62, 3010.41, 1834.14, 3007.17, 2861.39, 869.387, 2864.63)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(3636.5, 1830.9, 5537.48, 1837.38, 5547.21, 2861.39, 3639.75, 2858.15)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(2131.3, 1484.16, 2131.3, 1655.91, 2309.71, 1662.39, 2303.23, 1493.88)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
 visible = false
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(4408.57, 1500.37, 4424.79, 1591.1, 4473.45, 1668.87, 4687.55, 1565.18, 4655.11, 1416.11)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="MAP/StaticBody2D"]
