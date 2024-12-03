@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6nuphlciggs0"]
+[gd_scene load_steps=6 format=3 uid="uid://b6nuphlciggs0"]
 
 [ext_resource type="Script" path="res://Menus/pause_menu.gd" id="1_xggdd"]
 [ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="2_rbqb5"]
 [ext_resource type="Texture2D" uid="uid://cysvf17hcbcdt" path="res://Textures/Pause_screen.jpg" id="2_upuw7"]
 [ext_resource type="PackedScene" uid="uid://cwxoi226r27s8" path="res://Menus/Options.tscn" id="4_te5bw"]
+[ext_resource type="PackedScene" uid="uid://dgukg2g33pmdl" path="res://Menus/StatsMenu.tscn" id="5_0nb2v"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -76,6 +77,10 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Options" parent="." instance=ExtResource("4_te5bw")]
+visible = false
+layout_mode = 1
+
+[node name="StatsMenu" parent="." instance=ExtResource("5_0nb2v")]
 visible = false
 layout_mode = 1
 

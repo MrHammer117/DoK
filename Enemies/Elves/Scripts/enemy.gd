@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 100.0
 @export var attack_distance: float = 35
-@export var attack_cooldown: float = .2  # Cooldown between attacks
+@export var attack_cooldown: float = .3  # Cooldown between attacks
 
 var wanderDirection : Vector2
 var wanderTime : float
@@ -109,6 +109,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		var my_random_number = rng.randf_range(10.0, 20.0)
 		enemy_damaged(my_random_number)
+		Godclass.register_damage_done(my_random_number)
 		area.queue_free()
 		
 func enemy_damaged(damage):
@@ -117,6 +118,7 @@ func enemy_damaged(damage):
 func death():
 	enemy_health = 0
 	dead = true
+	Godclass.register_kills(1)
 	queue_free()
 
 func Update(delta: float):

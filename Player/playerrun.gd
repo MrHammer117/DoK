@@ -2,16 +2,17 @@ extends CharacterBody2D
 
 const healthMAX = 150
 var health = 100
- 
 @onready var health_bar = $Health/Healthbar
 @onready var health_bar_max_width = health_bar.size.x
 
 var bulletSpeed = 300
 var bullet = preload("res://Weapons/Bullet.tscn")
 
+
 var player_health = 150
 var hp = healthMAX
 
+signal player_damaged(damage: int) 
 
 const MOVE_SPEED: float = 150
 @export var speed_multiplier: int = 1
@@ -60,6 +61,8 @@ func damaged(damage):
 	player_health = player_health-damage
 	player_health = clamp(player_health, 0, 150)
 	update_health_bar()
+	
+	Godclass.register_damage(damage)
 	
 func update_health_bar():
 	var health_percentage = float(player_health) / healthMAX

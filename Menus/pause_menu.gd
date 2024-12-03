@@ -1,6 +1,7 @@
 extends Control
 
 @onready var optionsMenu = $Options
+@onready var statsMenu = $StatsMenu
 
 var _is_paused:bool = false:
 	set(value):
@@ -20,7 +21,7 @@ func _on_options_button_pressed() -> void:
 
 
 func _on_stats_button_pressed() -> void:
-	pass # Replace with function body.
+	statsMenu.visible = true
 
 
 func _on_quit_button_pressed() -> void:

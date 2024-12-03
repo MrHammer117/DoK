@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bi0ytrh16p0uu"]
 
 [ext_resource type="Script" path="res://Player/playerRun.gd" id="1_exapt"]
-[ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="2_h0myh"]
 [ext_resource type="AudioStream" uid="uid://bn2yh6gce62e4" path="res://Sounds/blunderbuss-shot-101soundboards.mp3" id="2_jq5gs"]
+[ext_resource type="Texture2D" uid="uid://cvm3jlwcus0ut" path="res://Textures/KaarlFinal.png" id="3_eromi"]
 [ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="4_ofag7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jv4oo"]
@@ -22,13 +22,13 @@ script = ExtResource("1_exapt")
 stream = ExtResource("2_jq5gs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(15, 3.1665e-08)
-rotation = 1.54861
-scale = Vector2(0.453333, 0.4)
-texture = ExtResource("2_h0myh")
+position = Vector2(14, 2)
+rotation = 0.000756264
+scale = Vector2(0.0547298, 0.048291)
+texture = ExtResource("3_eromi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+position = Vector2(14, 1)
 rotation = 3.12829
 shape = SubResource("CapsuleShape2D_jv4oo")
 
@@ -36,12 +36,12 @@ shape = SubResource("CapsuleShape2D_jv4oo")
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-visible = false
 position = Vector2(15, -1)
 shape = SubResource("CircleShape2D_rv8hm")
 
 [node name="ShootFromHere" type="Marker2D" parent="."]
-position = Vector2(35, 0)
+position = Vector2(58, -13)
+scale = Vector2(0.935935, 0.935935)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)

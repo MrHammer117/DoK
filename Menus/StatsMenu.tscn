@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgukg2g33pmdl"]
+[gd_scene load_steps=3 format=3 uid="uid://dgukg2g33pmdl"]
 
 [ext_resource type="Script" path="res://Menus/stats_menu.gd" id="1_y6hu2"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="2_p605p"]
 
 [node name="StatsMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y6hu2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -231.0
+offset_top = -21.0
+offset_right = 2099.0
+offset_bottom = 1099.0
+color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -27,16 +36,27 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p605p")
 text = "Stats:"
 
 [node name="Kills" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p605p")
 text = "Kills"
 
 [node name="DamageTaken" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p605p")
 text = "Damage Taken"
 
 [node name="DamageDone" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p605p")
 text = "Damage Done"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_p605p")
+text = "EXIT"
+
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
