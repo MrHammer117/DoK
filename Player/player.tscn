@@ -24,12 +24,13 @@ stream = ExtResource("2_jq5gs")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(14, 2)
 rotation = 0.000756264
-scale = Vector2(0.0547298, 0.048291)
+scale = Vector2(0.0685222, 0.0604608)
 texture = ExtResource("3_eromi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, 1)
 rotation = 3.12829
+scale = Vector2(2.21471, 2.21471)
 shape = SubResource("CapsuleShape2D_jv4oo")
 
 [node name="Hitbox" type="Area2D" parent="."]
@@ -37,11 +38,12 @@ position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(15, -1)
+scale = Vector2(1.37748, 1.37748)
 shape = SubResource("CircleShape2D_rv8hm")
 
 [node name="ShootFromHere" type="Marker2D" parent="."]
-position = Vector2(58, -13)
-scale = Vector2(0.935935, 0.935935)
+position = Vector2(58, -17)
+scale = Vector2(0.862814, 0.862814)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
