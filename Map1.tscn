@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc810276m7i0l"]
+[gd_scene load_steps=11 format=3 uid="uid://cc810276m7i0l"]
 
 [ext_resource type="Script" path="res://map_1.gd" id="1_gpglv"]
 [ext_resource type="PackedScene" uid="uid://bi0ytrh16p0uu" path="res://Player/player.tscn" id="2_gdnoe"]
 [ext_resource type="Texture2D" uid="uid://djohcerkh1tx8" path="res://Textures/Maps/Minecart Disaster.jpg" id="2_l8crp"]
 [ext_resource type="PackedScene" uid="uid://b6nuphlciggs0" path="res://Menus/Pause_Menu.tscn" id="2_nnhgd"]
 [ext_resource type="PackedScene" uid="uid://ck451j43iqgv8" path="res://Enemies/Elves/Sprites/ElfMelee.tscn" id="3_2bugv"]
+[ext_resource type="AudioStream" uid="uid://blqopathup8pg" path="res://Sounds/energy-90321.mp3" id="4_spns3"]
+[ext_resource type="FontFile" uid="uid://c6ohhw1o6jer4" path="res://Fonts/khazad-dum-font/KhazadDum-0WXEr.ttf" id="6_68kb3"]
 [ext_resource type="AudioStream" uid="uid://1qvvy4akg5m8" path="res://Sounds/Active Mine  Workers, No voice, Boulders, Dwarves Ambience  1 Hour #dnd.mp3" id="6_p6ch7"]
 [ext_resource type="Script" path="res://Minimap.gd" id="6_xny4y"]
 [ext_resource type="Texture2D" uid="uid://bi6papyfp5wlu" path="res://Textures/Kaarl!!!!.png" id="7_m5krj"]
@@ -81,10 +83,25 @@ polygon = PackedVector2Array(5352.57, 4073.35, 5359.06, 4202.97, 5229.3, 4206.21
 visible = false
 polygon = PackedVector2Array(6698.82, 4280.74, 6692.33, 4449.25, 6870.75, 4471.93, 6886.97, 4296.94)
 
+[node name="Energy-90321" type="AudioStreamPlayer" parent="MAP"]
+stream = ExtResource("4_spns3")
+
 [node name="Player" parent="." instance=ExtResource("2_gdnoe")]
 position = Vector2(480, 271)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="RoundsSurvived" type="Label" parent="Player/CanvasLayer"]
+offset_left = 10.0
+offset_top = 1015.0
+offset_right = 223.0
+offset_bottom = 1068.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_68kb3")
+theme_override_font_sizes/font_size = 50
+text = "Rounds: "
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Player/CanvasLayer"]
 offset_left = 1718.0
