@@ -11,8 +11,10 @@ config_version=5
 [application]
 
 config/name="Depths of Kohldor"
+config/version="1.0"
 run/main_scene="res://Menus/Main_Menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://Textures/Kaarl!!!!.png"
 
 [autoload]
 
