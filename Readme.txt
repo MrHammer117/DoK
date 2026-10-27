@@ -1,6 +1,6 @@
-This game will be a top down game similar to the likes of COD zombies with RPG like upgrades, and
-perhaps 3 classes: Thrown melee, Magic, and Shotgun.
+This Game is a project designed for Human Computer Interaction to build software with User feedback 
+on UI design. This is a small round based horde survival game where each round gets progressively
+difficult. This game is designed with various user input in mind so users may change out their
+controls at any point. The game also tracks users stats as they play.
 
-The game is set within the underground of the Dwarf Hold of Kholdor, there is a (insert monster) 
-incursion that you have been sent down to clear out, however you've been trapped and have to defend
-yourself from an ungodly onslaught of enemies.
+In this Github Repo the EXE file is included and can be run from there. 
